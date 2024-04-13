@@ -46,7 +46,9 @@ const displayAverageSalary = function(employeesArray) {  // I changed the functi
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
-    // probably use options[employeesArray.firstName[i]] and grab corresponding last name some how.
+    // probably use options[employeesArray.firstName[i]] and grab corresponding last name some how.  or maybe loop and grab a random i?
+    const randomName = Math.floor(Math.random() * employeesArray.firstName.length);
+    console.log(`Congratulations to ${employeesArray.firstName[randomName]} ${employeesArray.lastname[randomName]}, our random drawing winner!`);
 }
 
 /*
@@ -66,6 +68,8 @@ const displayEmployees = function(employeesArray) {
   // Loop through the employee data and create a row for each employee
   for (let i = 0; i < employeesArray.length; i++) {
     const currentEmployee = employeesArray[i];
+
+    //console.log(`Current Employee: ${currentEmployee}`); // This isn't appearing in console.  unsure why
 
     const newTableRow = document.createElement("tr");
 
