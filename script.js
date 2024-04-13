@@ -1,19 +1,52 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
-
-// Collect employee data
+const employeesArray = {
+    firstName: [],
+    lastname: [],
+    salary: [],
+  };
+// Collect employee data - First Name, Last Name, Salary, prompt to add another employee
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
+//   const employeesArray = [];
+
+//   const lastName = [];
+//   const salary = [];
+
+  while (addEmployeesBtn) {
+    // employeesArray.push(window.prompt("First Name:"), window.prompt("Last Name:"), window.prompt("Salary:"));
+
+    employeesArray.firstName.push(window.prompt("First Name:"));
+    employeesArray.lastname.push(window.prompt("Last Name"));
+    employeesArray.salary.push(window.prompt("Salary:"));
+
+    let again = window.confirm("Add Another Employee?");
+    if (again == true) {
+        continue;
+    } else {
+        console.log(employeesArray);
+        // console.log(employeeList);
+        return employeesArray;
+    }
+}
 }
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
+const displayAverageSalary = function(employeesArray) {  // I changed the function input from employeesArray to collectEmployees.  is that okay?
   // TODO: Calculate and display the average salary
+  let salTotal = 0;
+  for (let i = 0; i < employeesArray.salary.length; i++) {
+    salTotal += parseInt(employeesArray.salary[i]);
+  }
+
+  let avgSal = salTotal / employeesArray.salary.length;
+  console.log(`The average employee salary between our ${employeesArray.salary.length} employee(s) is $${avgSal}`);
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+    // probably use options[employeesArray.firstName[i]] and grab corresponding last name some how.
 }
 
 /*
