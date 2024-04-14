@@ -2,33 +2,75 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const employeesArray = {
     firstName: [],
-    lastname: [],
+    lastName: [],
     salary: [],
   };
 // Collect employee data - First Name, Last Name, Salary, prompt to add another employee
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
-//   const employeesArray = [];
-
-//   const lastName = [];
-//   const salary = [];
 
   while (addEmployeesBtn) {
-    // employeesArray.push(window.prompt("First Name:"), window.prompt("Last Name:"), window.prompt("Salary:"));
-
-    employeesArray.firstName.push(window.prompt("First Name:"));
-    employeesArray.lastname.push(window.prompt("Last Name"));
-    employeesArray.salary.push(window.prompt("Salary:"));
+    //First Name window prompt + cancel button functionality
+    let answerFirst = window.prompt("First Name:");
+    if (answerFirst === null) {
+        // Confirms the cancel 
+        let checkFirst = window.confirm("Are you sure?", "Yes");
+            if (checkFirst === true) {
+                alert("Self Destructing");
+                return;
+            } else {
+                continue;
+            }
+    } else {
+        employeesArray.firstName.push(answerFirst);
+    }
+    /*employeesArray.firstName.push(window.prompt("First Name:")); */
+   
+    //Last Name window prompt + cancel button functionality
+    let answerLast = window.prompt("Last Name:");
+    if (answerLast === null) {
+        // Confirms the cancel
+        let checkLast = window.confirm("Are you sure?", "Yes");
+        if (checkLast === true) {
+            alert("Self Destructing");
+            return;
+        } else {
+            //If they cancel the cancel, removes the most recent First Name from the array
+            employeesArray.firstName.pop();
+            continue;
+        }
+    } else {
+        employeesArray.lastName.push(answerLast);
+    }
+    /*employeesArray.lastName.push(window.prompt("Last Name")); */
+   
+    //Salary window prompt + cancel button functionality
+    let answerSalary = window.prompt("Salary:");
+    if (answerSalary === null) {
+        // Confirms the cancel
+        let checkSalary = window.confirm("Are you sure?", "Yes");
+        if (checkSalary === true) {
+            alert("Self Destructing");
+            return;
+        } else {
+            //If they cancel the cancel, removes the most recent First and Last Name from the array
+            employeesArray.firstName.pop();
+            employeesArray.lastName.pop();
+            continue;
+        }
+    } else {
+        employeesArray.salary.push(answerSalary);
+    }
+    /*employeesArray.salary.push(window.prompt("Salary:")); */
 
     let again = window.confirm("Add Another Employee?");
     if (again == true) {
         continue;
     } else {
         console.log(employeesArray);
-        // console.log(employeeList);
-        return employeesArray;
+        return employeesArray;  // why does returning employeesArray make this work?
     }
-}
+    }
 }
 
 // Display the average salary
@@ -48,7 +90,7 @@ const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
     // probably use options[employeesArray.firstName[i]] and grab corresponding last name some how.  or maybe loop and grab a random i?
     const randomName = Math.floor(Math.random() * employeesArray.firstName.length);
-    console.log(`Congratulations to ${employeesArray.firstName[randomName]} ${employeesArray.lastname[randomName]}, our random drawing winner!`);
+    console.log(`Congratulations to ${employeesArray.firstName[randomName]} ${employeesArray.lastName[randomName]}, our random drawing winner!`);
 }
 
 /*
