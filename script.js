@@ -15,15 +15,44 @@ let again = true;
     };
     //First Name window prompt 
     let answerFirst = window.prompt("First Name:");
-    employee.firstName = answerFirst;
+    if (answerFirst === null) {
+        let checkFirst = window.confirm("Are you sure?");
+        if (checkFirst) {
+            alert("Goodbye");
+            return;
+        } else {
+            continue;
+        }
+    } else {
+        employee.firstName = answerFirst;
+    }
 
     //Last Name window prompt
     let answerLast = window.prompt("Last Name:");
-    employee.lastName = answerLast;
+    if (answerLast === null) {
+        let checkLast = window.confirm("Are you sure?");
+        if (checkLast) {
+            alert("Goodbye");
+            return;
+        } else {
+            continue;
+        }
+    } else {
+        employee.lastName = answerLast;
+    }
 
     //Salary window prompt
     let answerSalary = window.prompt("Salary:");
-   
+    if (answerSalary === null) {
+        let checkSal = window.confirm("Are you sure?");
+        if (checkSal) {
+            alert("Goodbye");
+            return;
+        } else {
+            continue;
+        }
+    }
+   else {
     while (isNaN(answerSalary)) {
         alert("Enter a Number");
         answerSalary = window.prompt("Salary:");
@@ -37,6 +66,7 @@ let again = true;
         continue;
     } else {
         employeesArray.push(employee);
+    }
     }
     }
 return employeesArray;
