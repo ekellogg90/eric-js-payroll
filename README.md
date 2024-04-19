@@ -1,8 +1,8 @@
-# Eric Kellogg's Software Development Portfolio
+# Eric Kellogg's Employee Payroll Tracker
 
 ## Description
 
-In this project I created a personal Portfolio page to showcase my work.
+In this project I created an employee payroll web application.
 
 ## Installation
 
@@ -10,19 +10,15 @@ N/A
 
 ## Usage
 
+Enter in employee(s) First Name, Last Name, and Salary and it'll display on the table.  Within the console it'll tell you the average Salary and who the random drawing winner is.
+![image](https://github.com/ekellogg90/eric-js-payroll/assets/140920153/46d08692-4f61-46f5-89f6-526eaf58e212)
+
+App link - https://ekellogg90.github.io/eric-js-payroll/
+
 ## What I learned
 
-This project really reinforced how to use flexboxes that create a responsive layout to different device sizes.
-
-Some fun things I played with were:
-
-    Adding a Favicon to my browser tab.
+I learned how to use while and for loops in this challenge and to how to store user input into an object within an array.
   
-    Making pictures clickable out to a URL and scalable upon hover.
-  
-    Setting a custom background image for the entire site.
-  
-
 ## License
 
 GNU General Public License v3.0
