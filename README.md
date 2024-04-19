@@ -21,6 +21,8 @@ App link - https://ekellogg90.github.io/eric-js-payroll/
 ## What I learned
 
 I learned how to use while and for loops in this challenge and to how to store user input into an object within an array.
+
+I also learned how to check if the user selects 'cancel' in a window prompt and implemented the expected behavior for that path.
   
 ## License
 
